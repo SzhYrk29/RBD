@@ -1,0 +1,64 @@
+db.createCollection("Users");
+
+db.Users.insertMany ([
+    {
+        name: 'Snizhana',
+        surname: 'Yurko',
+        username: 's29870',
+        email: 's29870@pjwstk.edu.pl',
+        password: 'password1'
+    },
+
+    {
+        name: 'Denys',
+        surname: 'Novikov',
+        username: 's30888',
+        email: 's30888@pjwstk.edu.pl',
+        password: 'password2'
+    },
+
+    {
+        name: 'Artur',
+        surname: 'Zhylin',
+        username: 's31646',
+        email: 's31646@pjwstk.edu.pl',
+        password: 'password3'
+    },
+
+    {
+        name: 'Denys',
+        surname: 'Ivashchenko',
+        username: 's30024',
+        email: 's30024@pjwstk.edu.pl',
+        password: 'password4',
+    },
+
+    {
+        name: 'Ekaterina',
+        surname: 'Levkovich',
+        username: 's29858',
+        email: 's29858@pjwstk.edu.pl',
+        password: 'password5'
+    }
+]);
+
+db.Users.insertOne({
+    name: 'Mark',
+    surname: 'Tsikhanau',
+    username: 's31412',
+    email: 's31412@pjwstk.edu.pl',
+    password: 'password6'
+});
+
+db.Users.find();
+
+db.Users.find({}, {_id:0, name: 1, surname: 1, username: 1, email: 1, password: 1});
+
+db.Users.updateOne( { name: 'Snizhana'}, {$set: { Group: '21c' } } );
+db.Users.updateOne( { surname: 'Novikov'}, {$set: { Group: '22c' } } );
+db.Users.updateOne( { name: 'Artur'}, {$set: { Group: '21c' } } );
+db.Users.updateOne( { name: 'Mark'}, {$set: { Group: '26c' } } );
+db.Users.updateOne( { name: 'Ekaterina'}, {$set: { Group: '23c' } } );
+db.Users.updateOne( { surname: 'Ivashchenko'}, {$set: { Group: '26c' } } );
+
+db.Users.find();
